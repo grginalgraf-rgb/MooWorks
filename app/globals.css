@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-body), 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-pixel: var(--font-display), 'Pixelify Sans', monospace;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Walnut panels, cream text, grass green primary, butter-yellow accent */
+:root {
+  color-scheme: dark;
+  --background: #24170f;
+  --foreground: #f3e6c8;
+  --card: #34231a;
+  --card-foreground: #f3e6c8;
+  --popover: #34231a;
+  --popover-foreground: #f3e6c8;
+  --primary: #79b84a;
+  --primary-foreground: #1c2a10;
+  --secondary: #45301f;
+  --secondary-foreground: #f3e6c8;
+  --muted: #45301f;
+  --muted-foreground: #c8b38c;
+  --accent: #f2c94c;
+  --accent-foreground: #2a1c0e;
+  --destructive: #d9644a;
+  --border: #5a4030;
+  --input: #5a4030;
+  --ring: #f2c94c;
+  --radius: 0.375rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
